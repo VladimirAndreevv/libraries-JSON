@@ -19,6 +19,7 @@
 - [simdjson](https://github.com/simdjson/simdjson)
 - [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
 - [Boost.PropertyTree](https://www.boost.org/doc/libs/release/doc/html/property_tree.html)
+- [Boost.JSON](https://www.boost.org/releases/latest/)
 
 ---
 
@@ -26,8 +27,9 @@
 
 - 10 МБ
 - 100 МБ
-- 500 МБ
+- 600 МБ
 - 1 ГБ
+- [Файлы для теста](https://disk.yandex.ru/d/S24ux_HCso23kg)
 
 ---
 
@@ -37,4 +39,11 @@
 
  ## IDE
  Visual Studio Code или Visual Studio
+
+---
+
+## Сроки
+
+Задание выполняется до 25.05.2025
+
 
