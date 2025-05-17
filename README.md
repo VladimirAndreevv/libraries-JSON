@@ -16,7 +16,6 @@
 
 - [nlohmann/json](https://github.com/nlohmann/json)
 - [RapidJSON](https://github.com/Tencent/rapidjson)
-- [simdjson](https://github.com/simdjson/simdjson)
 - [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
 - [Boost.PropertyTree](https://www.boost.org/doc/libs/release/doc/html/property_tree.html)
 - [Boost.JSON](https://www.boost.org/releases/latest/)
