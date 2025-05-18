@@ -1,0 +1,3 @@
+C:/proekt/JSON/build/CMakeFiles/JSON.dir
+C:/proekt/JSON/build/CMakeFiles/edit_cache.dir
+C:/proekt/JSON/build/CMakeFiles/rebuild_cache.dir
