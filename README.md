@@ -167,3 +167,9 @@
 
 # Демонстрация вывода программы
 ![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> f7de0edfe9f0c466f33ad9312679fae74f359adc
