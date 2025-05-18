@@ -155,9 +155,16 @@
 
 **Вывод:** 
 
-## Общий вывод
+# Инструкция по библиотеке
+## Boost.JSON
+## nlohmann/json
+## RapidJSON
+## JsonCpp
+## Boost.PropertyTree
 
-## Демонстрация вывода программы
+# Общий вывод
+
+# Демонстрация вывода программы
 ![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
 
 
