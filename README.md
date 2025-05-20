@@ -266,9 +266,11 @@
 
 # Общий вывод
 Динамика изменене скороти чтение
-![график чтения](https://github.com/user-attachments/assets/754ae9c2-8c16-4811-a060-f828f940c8a9)
+![график чтения](https://github.com/user-attachments/assets/cf9e4799-b886-4d74-a495-6d3a841d0faa)
+
 Динамика изменене скороти записи
-![график записи](https://github.com/user-attachments/assets/26c206a7-23df-40ec-bb41-0f3a6cf9c0fa)
+![график чтения](https://github.com/user-attachments/assets/f76a70ce-56df-4a2b-bc4f-81b456e318e8)
+
 
 # Демонстрация вывода программы
 ![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
