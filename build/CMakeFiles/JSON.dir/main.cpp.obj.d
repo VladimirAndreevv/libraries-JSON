@@ -4,6 +4,7 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
  C:/msys64/mingw64/include/c++/14.2.0/ostream \
  C:/msys64/mingw64/include/c++/14.2.0/ios \
  C:/msys64/mingw64/include/c++/14.2.0/iosfwd \
@@ -89,6 +90,8 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/bits/utility.h \
  C:/msys64/mingw64/include/c++/14.2.0/debug/debug.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/predefined_ops.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bit \
+ C:/msys64/mingw64/include/c++/14.2.0/concepts \
  C:/msys64/mingw64/include/c++/14.2.0/bits/refwrap.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/invoke.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/range_access.h \
@@ -97,6 +100,9 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/ext/alloc_traits.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/alloc_traits.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_construct.h \
+ C:/msys64/mingw64/include/c++/14.2.0/string_view \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/functional_hash.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/string_view.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/ext/string_conversions.h \
  C:/msys64/mingw64/include/c++/14.2.0/cstdlib \
  C:/msys64/mingw64/include/stdlib.h \
@@ -108,8 +114,12 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/cstdio \
  C:/msys64/mingw64/include/c++/14.2.0/cerrno \
  C:/msys64/mingw64/include/c++/14.2.0/bits/charconv.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/functional_hash.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/memory_resource.h \
+ C:/msys64/mingw64/include/c++/14.2.0/cstddef \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h \
+ C:/msys64/mingw64/include/c++/14.2.0/tuple \
  C:/msys64/mingw64/include/c++/14.2.0/bits/locale_classes.tcc \
  C:/msys64/mingw64/include/c++/14.2.0/system_error \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
@@ -135,7 +145,6 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/config/user.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/config/detail/select_compiler_config.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/config/compiler/gcc.hpp \
- C:/msys64/mingw64/include/c++/14.2.0/cstddef \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/config/detail/select_stdlib_config.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/version \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/config/stdlib/libstdcpp3.hpp \
@@ -225,6 +234,8 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_heap.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
  C:/msys64/mingw64/include/c++/14.2.0/climits \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/pilfer.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/result.hpp \
@@ -237,9 +248,22 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/detail/error_category.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/detail/config.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/functional \
- C:/msys64/mingw64/include/c++/14.2.0/tuple \
- C:/msys64/mingw64/include/c++/14.2.0/bits/uses_allocator.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/std_function.h \
+ C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ C:/msys64/mingw64/include/c++/14.2.0/vector \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/array \
+ C:/msys64/mingw64/include/c++/14.2.0/compare \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/detail/error_condition.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/detail/generic_category.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/system/detail/generic_category_message.hpp \
@@ -357,6 +381,19 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/impl/object.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/cmath \
  C:/msys64/mingw64/include/math.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/specfun.h \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/impl/value.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/impl/value_ref.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/basic_parser.hpp \
@@ -380,8 +417,6 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/endian/detail/is_trivially_copyable.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/endian/detail/endian_store.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/detail/sbo_buffer.hpp \
- C:/msys64/mingw64/include/c++/14.2.0/array \
- C:/msys64/mingw64/include/c++/14.2.0/compare \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/conversion.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/impl/conversion.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/describe/enumerators.hpp \
@@ -391,17 +426,13 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/describe/modifiers.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/describe/bases.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/describe/detail/cx_streq.hpp \
+ C:/msys64/mingw64/include/c++/14.2.0/variant \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/monotonic_resource.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/null_resource.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/parse.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/parse_into.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/detail/parse_into.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/describe/enum_from_string.hpp \
- C:/msys64/mingw64/include/c++/14.2.0/vector \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/vector.tcc \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/impl/parse_into.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/basic_parser_impl.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/detail/literals.hpp \
@@ -433,6 +464,7 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/stream_parser.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/value_from.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/detail/value_from.hpp \
+ C:/msys64/mingw64/include/c++/14.2.0/optional \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/value_to.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/detail/value_to.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/json/visit.hpp \
@@ -655,20 +687,33 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/sec_api/stralign_s.h \
  C:/msys64/mingw64/include/winsvc.h C:/msys64/mingw64/include/mcx.h \
  C:/msys64/mingw64/include/imm.h C:/msys64/mingw64/include/psapi.h \
+ C:/msys64/mingw64/include/c++/14.2.0/filesystem \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/fs_path.h \
+ C:/msys64/mingw64/include/c++/14.2.0/locale \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+ C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+ C:/msys64/mingw64/include/c++/14.2.0/iomanip \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/msys64/mingw64/include/c++/14.2.0/codecvt \
+ C:/msys64/mingw64/include/c++/14.2.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+ C:/msys64/mingw64/include/c++/14.2.0/bits/fs_ops.h \
  C:\proekt\JSON\nlohmannJson.h \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/json.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/memory \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/align.h \
- C:/msys64/mingw64/include/c++/14.2.0/bit \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
- C:/msys64/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
- C:/msys64/mingw64/include/c++/14.2.0/ext/concurrence.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
  C:/msys64/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/adl_serializer.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/abi_macros.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/conversions/from_json.hpp \
@@ -679,12 +724,6 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_tree.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_map.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/erase_if.h \
- C:/msys64/mingw64/include/c++/14.2.0/unordered_map \
- C:/msys64/mingw64/include/c++/14.2.0/bits/unordered_map.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
  C:/msys64/mingw64/include/c++/14.2.0/valarray \
  C:/msys64/mingw64/include/c++/14.2.0/bits/valarray_array.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
@@ -721,6 +760,7 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/input/input_adapters.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/numeric \
  C:/msys64/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/input/json_sax.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/input/lexer.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/meta/is_sax.hpp \
@@ -735,15 +775,9 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/output/binary_writer.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/output/output_adapters.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/output/serializer.hpp \
- C:/msys64/mingw64/include/c++/14.2.0/iomanip \
- C:/msys64/mingw64/include/c++/14.2.0/locale \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
- C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
- C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
- C:/msys64/mingw64/include/c++/14.2.0/bits/locale_conv.h \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/conversions/to_chars.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/ordered_map.hpp \
+ C:/msys64/mingw64/include/c++/14.2.0/any \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/detail/macro_unscope.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
  C:\proekt\JSON\RapidJSON.h \
@@ -1315,7 +1349,6 @@ CMakeFiles/JSON.dir/main.cpp.obj: C:\proekt\JSON\main.cpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/detail/config_def.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/detail/config_undef.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/detail/type_traits/negation.hpp \
- C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/type_traits/negation.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/enable_if_convertible.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/detail/eval_if_default.hpp \
  C:/Users/andrr/vcpkg/installed/x64-mingw-static/include/boost/iterator/detail/type_traits/type_identity.hpp \

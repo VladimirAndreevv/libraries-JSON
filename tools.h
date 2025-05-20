@@ -6,6 +6,7 @@
 #include <string>
 #include <windows.h>
 #include <psapi.h>
+#include <filesystem>
 
 using namespace std;
 
@@ -40,6 +41,39 @@ string ReadFile(const string& files)
         buffer << file.rdbuf();
         return buffer.str();
     }
+}
+
+string ReadFiles(const string& catalog)
+{
+    if (!std::filesystem::exists(catalog) || !std::filesystem::is_directory(catalog)) {
+        wcout << L"Ошибка: указанный путь не является папкой.\n";
+    }
+
+    string basketJSON = "[\n";
+
+    bool first = true;
+    for (const auto& entry : std::filesystem::directory_iterator(catalog)) {
+        if (entry.is_regular_file() && entry.path().extension() == ".json") {
+            ifstream file(entry.path());
+            if (!file) {
+                wcout << L"Не удалось открыть: " << entry.path().filename() << endl;
+                continue;
+            }
+
+            if (!first) {
+                basketJSON += ",\n";
+            }
+            else {
+                first = false;
+            }
+
+            stringstream buffer;
+            buffer << file.rdbuf();
+            basketJSON += buffer.str();
+        }
+    }
+    basketJSON += "\n]";
+    return basketJSON;
 }
 
 void Results(Stats stats)

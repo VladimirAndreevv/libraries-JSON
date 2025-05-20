@@ -9,10 +9,19 @@
 using namespace std;
 
 
-Stats NlohmannJson(const string& files) {
-
+Stats NlohmannJson(const string& files, bool choice) 
+{
     Stats stats;
-    string jsonStr = ReadFile(files);
+    string jsonStr;
+    switch (choice)
+    {
+    case 0:
+         jsonStr = ReadFile(files);
+        break;
+    case 1:
+        jsonStr = ReadFiles(files);
+        break;
+    }
     if (jsonStr.empty())
     {
         return stats;

@@ -567,6 +567,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[C:/Users/andrr/vcpkg/installed/x64-mingw-static/share/boost/BoostConfig.cmake][cfound components: json property_tree ][v1.88.0()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding nlohmann_json
 FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[C:/Users/andrr/vcpkg/installed/x64-mingw-static/share/nlohmann_json/nlohmann_jsonConfig.cmake][v3.12.0()]
 //linker supports push/pop state

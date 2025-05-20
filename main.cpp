@@ -13,80 +13,92 @@ using namespace std;
 int main()
 {
     setlocale (LC_ALL,"");
+    bool choice;
     string file;
-    wcout << L"Введите путь к JSON-файлу: ";
+    string temp;
+    wcout << L"Введите \"0\" если производится тест 1 файла JSON \n или    \"1\" если производится тест каталога с файлами JSON: ";
+    getline(cin, temp);
+    stringstream(temp) >> choice;
+    if (choice == 1)
+    {
+        wcout << L"Введите путь к JSON-файлу: ";
+    }        
+    else
+    {
+        wcout << L"Введите путь к папке с JSON-файлами: ";        
+    } 
     getline(cin, file);
     cout << endl;
     Stats stats;
 
     wcout << L"Рeзультаты библиотеки Boost.JSON:" << endl;
     wcout << L"1 запуск: " << endl;
-    stats = BoostJSON(file);
+    stats = BoostJSON(file, choice);
     Results(stats);
     Reset();
     wcout << L"2 запуск: " << endl;
-    stats = BoostJSON(file);
+    stats = BoostJSON(file, choice);
     Results(stats);
     Reset();
     wcout << L"3 запуск: " << endl;
-    stats = BoostJSON(file);
+    stats = BoostJSON(file, choice);
     Results(stats);
     Reset();
 
     wcout << L"Рeзультаты библиотеки nlohmann/json:" << endl;
     wcout << L"1 запуск: " << endl;
-    stats = NlohmannJson(file);
+    stats = NlohmannJson(file, choice);
     Results(stats);
     Reset();
     wcout << L"2 запуск: " << endl;
-    stats = NlohmannJson(file);
+    stats = NlohmannJson(file, choice);
     Results(stats);
     Reset();
     wcout << L"3 запуск: " << endl;
-    stats = NlohmannJson(file);
+    stats = NlohmannJson(file, choice);
     Results(stats);
     Reset();
 
     wcout << L"Рeзультаты библиотеки RapidJSON:" << endl;
     wcout << L"1 запуск: " << endl;
-    stats = RapidJSON(file);
+    stats = RapidJSON(file, choice);
     Results(stats);
     Reset();
     wcout << L"2 запуск: " << endl;
-    stats = RapidJSON(file);
+    stats = RapidJSON(file, choice);
     Results(stats);
     Reset();
     wcout << L"3 запуск: " << endl;
-    stats = RapidJSON(file);
+    stats = RapidJSON(file, choice);
     Results(stats);
     Reset();
 
 
     wcout << L"Рeзультаты библиотеки JsonCpp:" << endl;
     wcout << L"1 запуск: " << endl;
-    stats = JsonCpp(file);
+    stats = JsonCpp(file, choice);
     Results(stats);
     Reset();
     wcout << L"2 запуск: " << endl;
-    stats = JsonCpp(file);
+    stats = JsonCpp(file, choice);
     Results(stats);
     Reset();
     wcout << L"3 запуск: " << endl;
-    stats = JsonCpp(file);
+    stats = JsonCpp(file, choice);
     Results(stats);
     Reset();
 
     wcout << L"Рeзультаты библиотеки Boost.PropertyTree:" << endl;
     wcout << L"1 запуск: " << endl;
-    stats = BoostPropertyTree(file);
+    stats = BoostPropertyTree(file, choice);
     Results(stats);
     Reset();
     wcout << L"2 запуск: " << endl;
-    stats = BoostPropertyTree(file);
+    stats = BoostPropertyTree(file, choice);
     Results(stats);
     Reset();
     wcout << L"3 запуск: " << endl;
-    stats = BoostPropertyTree(file);
+    stats = BoostPropertyTree(file, choice);
     Results(stats);
     Reset();
     system("pause");

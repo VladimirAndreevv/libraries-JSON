@@ -196,21 +196,6 @@
 			"path" : "C:/msys64/mingw64/lib/cmake/jsoncpp/jsoncpp-namespaced-targets.cmake"
 		},
 		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/FindBoost.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake"
-		},
-		{
 			"isExternal" : true,
 			"path" : "C:/Users/andrr/vcpkg/installed/x64-mingw-static/share/boost/BoostConfigVersion.cmake"
 		},

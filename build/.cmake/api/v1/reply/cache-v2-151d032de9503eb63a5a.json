@@ -1202,6 +1202,18 @@
 			"value" : "[C:/Users/andrr/vcpkg/installed/x64-mingw-static/share/boost/BoostConfig.cmake][cfound components: json property_tree ][v1.88.0()]"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding Threads"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[TRUE][v()]"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json",
 			"properties" : 
 			[
