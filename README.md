@@ -24,11 +24,13 @@
 ---
 
 ## Размеры JSON-файлов для тестирования
-
-1. 10 МБ
-2. 100 МБ
-3. 600 МБ
-4. 1 ГБ
+1. 100 КБ
+2. 1 МБ
+3. 10 МБ
+4. 100 МБ
+5. 600 МБ
+6. 1 ГБ
+7. Много маленьких файлов (размер 1 файла ~238КБ, элементов 474,  общий вес ~111 МБ)
 - [Файлы для теста](https://disk.yandex.ru/d/S24ux_HCso23kg)
 
 ---
@@ -50,6 +52,64 @@
 
 
 # Сравнение производительности библиотек Boost.JSON, nlohmann/json, RapidJSON, JsonCpp и Boost.PropertyTree при работе с JSON-файлом
+## Файлы объемом 100 КБ
+Тестирование:
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">6.673 ms</td><td valign="top">2.753 ms</td><td valign="top">528 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">6.277 ms</td><td valign="top">2.805 ms</td><td valign="top">276 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">6.313 ms</td><td valign="top">2.769 ms</td><td valign="top">260 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>6.42 ms</b></td><td><b>2.78 ms</b></td><td><b>354.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">19.135 ms</td><td valign="top">4.13 ms</td><td valign="top">588 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">16.491 ms</td><td valign="top">2.995 ms</td><td valign="top">684 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">18.337 ms</td><td valign="top">2.87 ms</td><td valign="top">684 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>17.99 ms</b></td><td><b>3.33 ms</b></td><td><b>652 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.434 ms</td><td valign="top">2.557 ms</td><td valign="top">92 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.775 ms</td><td valign="top">3.32 ms</td><td valign="top">60 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">4.835 ms</td><td valign="top">2.846 ms</td><td valign="top">60 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.68 ms</b></td><td><b>2.91 ms</b></td><td><b>70.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">4.333 ms</td><td valign="top">2.224 ms</td><td valign="top">852 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.056 ms</td><td valign="top">3.976 ms</td><td valign="top">664 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">5.13 ms</td><td valign="top">3.43 ms</td><td valign="top">996 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.51 ms</b></td><td><b>3.21 ms</b></td><td><b>837.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">65.759 ms</td><td valign="top">9.167 ms</td><td valign="top">1896 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">60.355 ms</td><td valign="top">7.758 ms</td><td valign="top">1492 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">62.82 ms</td><td valign="top">8.555 ms</td><td valign="top">1632 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>62.98 ms</b></td><td><b>8.49 ms</b></td><td><b>1673.33 KB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма](https://github.com/user-attachments/assets/38585e17-3fcd-483e-9cda-1b63c5936b41)
+
+**Вывод:** RapidJSON продемонстрировала самое быстрое время чтения 4.68 мс и минимальное использование оперативной памяти 71 КБ, Boost.JSON быстее всего записывает JSON-формат  
+
+## Файлы объемом 1 МБ
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">40.374 ms</td><td valign="top">16.017 ms</td><td valign="top">1688 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">37.127 ms</td><td valign="top">17.153 ms</td><td valign="top">1648 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">38.08 ms</td><td valign="top">16.54 ms</td><td valign="top">2152 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>38.53 ms</b></td><td><b>16.57 ms</b></td><td><b>1829.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">112.243 ms</td><td valign="top">24.408 ms</td><td valign="top">3652 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">131.454 ms</td><td valign="top">19.31 ms</td><td valign="top">3476 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">119.581 ms</td><td valign="top">21.985 ms</td><td valign="top">3496 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>121.09 ms</b></td><td><b>21.9 ms</b></td><td><b>3541.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">26.355 ms</td><td valign="top">24.518 ms</td><td valign="top">540 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">34.542 ms</td><td valign="top">19.89 ms</td><td valign="top">508 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">27.495 ms</td><td valign="top">25.031 ms</td><td valign="top">508 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>29.46 ms</b></td><td><b>23.15 ms</b></td><td><b>518.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">19.296 ms</td><td valign="top">17.557 ms</td><td valign="top">5112 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">23.998 ms</td><td valign="top">16.495 ms</td><td valign="top">5480 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">19.846 ms</td><td valign="top">15.854 ms</td><td valign="top">5236 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>21.05 ms</b></td><td><b>16.64 ms</b></td><td><b>5276 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">457.976 ms</td><td valign="top">50.697 ms</td><td valign="top">10232 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">493.723 ms</td><td valign="top">54.366 ms</td><td valign="top">10800 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">436.042 ms</td><td valign="top">46.675 ms</td><td valign="top">10316 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>462.58 ms</b></td><td><b>50.58 ms</b></td><td><b>10449.33 KB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма2](https://github.com/user-attachments/assets/257a2be5-af2c-4e58-97a5-0eebf2886958)
+
+**Вывод:** JsonCpp показала лучшее среднее время чтения — 21.05 мс, RapidJSON заняла первое место по экономии памяти 519 КБ, Boost.JSON продемонстрировала хорошие результаты в категории: время записи — 16.57 мс
 ## Файлы объемом 10 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -75,7 +135,11 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>5313.26 ms</b></td><td valign="top"><b>469.77 ms</b></td><td valign="top"><b>108.33 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма3](https://github.com/user-attachments/assets/e0263c27-a33c-42bb-ba1b-5ee23427eb83)
+
+
+**Вывод:** RapidJSON осталась самой экономичной по оперативной памяти — 12 МБ, JsonCpp заняла первое место по скорости чтения 268.84 мс, Boost.JSON остается первым среди записи JSON-файлов
 ## Файлы объемом 100 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -101,7 +165,10 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>47.99 s</b></td><td valign="top"><b>4.93 s</b></td><td valign="top"><b>978.33 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма4](https://github.com/user-attachments/assets/7f58381a-af90-4775-a534-f00a0365b666)
+
+**Вывод:** JsonCpp показала лучшее среднее время чтения — 2.71 секунды, RapidJSON использовала всего 110 МБ оперативной памяти, Boost.JSON оказалась на первом месте среди записи 1.57 секунд
 ## Файлы объемом 600 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -127,7 +194,10 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>296.09 s</b></td><td valign="top"><b>30.85 s</b></td><td valign="top"><b>5585 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма5](https://github.com/user-attachments/assets/1447cfac-7a90-4a80-be29-6390bbbcab58)
+
+**Вывод:** JsonCpp показала самое быстрое среднее время чтения — 17.04 с,RapidJSON продемонстрировала хорошую экономию памяти — в среднем 558.67 МБ, Boost.JSON справилась с задачей за 25.98 с на чтение и 12.25 с на запись.
 
 ## Файлы объемом 1 ГБ
 Тестирование:
@@ -154,6 +224,37 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>522.25 s</b></td><td valign="top"><b>54.2 s</b></td><td valign="top"><b>8958 МB</b></td></tr>
 </table>
 
+**Гистограмма:** 
+![Гистограмма6](https://github.com/user-attachments/assets/ba460daf-6b28-4c36-bb8f-7866087da81d)
+
+**Вывод:** 
+## Много маленьких файлов (размер 1 файла ~238КБ, элементов 474,  общий вес ~111 МБ)
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">5.47369 s</td><td valign="top">2.66735 s</td><td valign="top">346 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">5.43559 s</td><td valign="top">2.27795 s</td><td valign="top">345 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">5.42531 s</td><td valign="top">2.40959 s</td><td valign="top">344 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>5.44 s</b></td><td><b>2.45 s</b></td><td><b>345 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">17.1532 s</td><td valign="top">3.74216 s</td><td valign="top">695 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">17.4249 s</td><td valign="top">3.76482 s</td><td valign="top">693 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">17.2868 s</td><td valign="top">3.76755 s</td><td valign="top">695 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>17.29 s</b></td><td><b>3.76 s</b></td><td><b>694.33 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.33146 s</td><td valign="top">3.33572 s</td><td valign="top">76 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.29226 s</td><td valign="top">3.32748 s</td><td valign="top">72 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">4.29556 s</td><td valign="top">3.27255 s</td><td valign="top">193 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.31 s</b></td><td><b>3.31 s</b></td><td><b>113.67 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">3.69359 s</td><td valign="top">2.6281 s</td><td valign="top">735 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">3.69702 s</td><td valign="top">2.69284 s</td><td valign="top">708 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">3.56635 s</td><td valign="top">2.73653 s</td><td valign="top">678 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>3.65 s</b></td><td><b>2.69 s</b></td><td><b>707 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">65.6019 s</td><td valign="top">8.00069 s</td><td valign="top">1476 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">66.6822 s</td><td valign="top">8.04298 s</td><td valign="top">1678 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">65.7737 s</td><td valign="top">7.86118 s</td><td valign="top">1308 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>66.02 s</b></td><td><b>7.97 s</b></td><td><b>1487.33 МB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма7](https://github.com/user-attachments/assets/fa32b31e-90da-47ab-b776-0e3b005d47b7)
+
 **Вывод:** 
 
 # Инструкция по библиотеке
@@ -164,6 +265,10 @@
 ## Boost.PropertyTree
 
 # Общий вывод
+Динамика изменене скороти чтение
+![график чтения](https://github.com/user-attachments/assets/754ae9c2-8c16-4811-a060-f828f940c8a9)
+Динамика изменене скороти записи
+![график записи](https://github.com/user-attachments/assets/26c206a7-23df-40ec-bb41-0f3a6cf9c0fa)
 
 # Демонстрация вывода программы
 ![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
