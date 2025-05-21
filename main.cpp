@@ -19,11 +19,11 @@ int main()
     wcout << L"Введите \"0\" если производится тест 1 файла JSON \n или    \"1\" если производится тест каталога с файлами JSON: ";
     getline(cin, temp);
     stringstream(temp) >> choice;
-    if (choice == 1)
+    if (choice == 0)
     {
         wcout << L"Введите путь к JSON-файлу: ";
     }        
-    else
+    else 
     {
         wcout << L"Введите путь к папке с JSON-файлами: ";        
     } 
@@ -102,6 +102,10 @@ int main()
     Results(stats);
     Reset();
     system("pause");
-   
+    system("pause");
+    system("pause");
+    system("pause");
+    system("pause");
+    system("pause");
     return 0;
 }
