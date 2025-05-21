@@ -256,84 +256,261 @@
 
 **Вывод:** JsonCpp показала лучшее среднее время чтения — 3.65 с, RapidJSON занимает первое место среди экономии потребления RAW памяти, Boost.JSON показала устойчивые результаты: время чтения — 5.44 с, время записи — 2.45 с, и умеренное использование памяти — 345 МБ.
 
-# Инструкция по библиотеки
+# Инструкция по библиотекам
+
 ## Установка библиотек
-Все Библиотеки устанавливались через **vcpkg**
-1. устанавливаем vcpkg
+
+Все библиотеки устанавливались через **vcpkg**
+
+1. Устанавливаем vcpkg  
 ```cmd
 git clone https://github.com/microsoft/vcpkg
 ```
-2. Переходим в каталог
+
+2. Переходим в каталог  
 ```cmd
 cd vcpkg
 ```
-3. устанавливаем библиотеки
+
+3. Устанавливаем библиотеки  
 ```cmd
-vcpkg install rapidjson
-vcpkg install simdjson
-vcpkg install jsoncpp
-vcpkg install boost-property-tree
-vcpkg install boost-json
+vcpkg install rapidjson  
+vcpkg install simdjson  
+vcpkg install jsoncpp  
+vcpkg install boost-property-tree  
+vcpkg install boost-json  
 ```
-**ВАЖНО** В сравнении используется компилятор MinGW, и библиотеки скачены были для него (у них расширение .a). Библиотеки типа .lib для Visual Studio имеют другую произодительность: Boost.PropertyTree, nlohmann/json потребляюе в 2 раза больше RAW
 
-4. добавляем библиотеки в проект.
+**ВАЖНО:** В сравнении используется компилятор MinGW, и библиотеки были скачаны для него (у них расширение `.a`). Библиотеки формата `.lib` для Visual Studio могут показывать другую производительность. Например, **Boost.PropertyTree** и **nlohmann/json** в сборке под MSVC потребляют в два раза больше RAM.
 
-пример:
-```cpp
+4. Добавляем библиотеки в проект.
+
+**Пример:**  
+```cmake
 set(nlohmann_json_DIR "C:/Users/[имя пользователя]/vcpkg/installed/x64-mingw-static/share/nlohmann_json/")
 find_package(nlohmann_json CONFIG REQUIRED)
 ```
-5. В проекте вызываем библиотека
-   
-Boost.JSON
+
+5. Подключаем библиотеки в проекте:
+
+**Boost.JSON**  
 ```cpp
 #include <boost/json.hpp>
 ```
-nlohmann/json
+
+**nlohmann/json**  
 ```cpp
 #include <nlohmann/json.hpp>
 ```
-RapidJSON
+
+**RapidJSON**  
 ```cpp
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <rapidjson/stringbuffer.h>
 ```
-JsonCpp
+
+**JsonCpp**  
 ```cpp
 #include <json/json.h>
 ```
-Boost.PropertyTree
+
+**Boost.PropertyTree**  
 ```cpp
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 ```
+
 ## Boost.JSON
 Особенности:
 
 1. Минимальная версия C++: C++11
 2. Удобство API: 5/5
 3. Поддержка потоковой обработки: поддержка частичная
+
+Типы пременных и функции:
+1. `json::object` - это JSON-объект `{"id": 1}`
+2. `json::array` - это JSON-массив `[object1, object2, object3]`
+3. `json::value` - это универсальное значение, может быть object или array
+4. `json::parse` - переводит строку `string` в `json::value`
+5. `json::serialize` - переводит значение `json::value` в  `string`
+6. `json::value_from` - преобразует структуру C++ в JSON
+
+Пример кода
+```cpp
+#include <iostream>
+#include <boost/json.hpp>
+using namespace std;
+int main()
+{
+	// создание объекта
+	boost::json::object obj;
+	obj["name"] = "Vova";
+	obj["age"] = 20;
+	// перевод в строку
+	string jsonStr = boost::json::serialize(obj);
+	cout << jsonStr << endl;
+	// перевод в boost::json::value
+	boost::json::value parsed = boost::json::parse(jsonStr);
+	// boost::json::array
+	boost::json::array arr = { obj,obj, obj };
+	for (const auto& v : arr) 
+	{
+		cout << v.as_object() << " ";
+	}
+	return 0;
+}
+```
+
 ## nlohmann/json
 Особенности:
 
-1. Минимальная версия C++: C++11, но рекомедуется C++17
+1. Минимальная версия C++: C++11, но рекомендуется C++17
 2. Удобство API: 5/5
-3. Поддержка потоковой обработки: не поддерживает 
+3. Поддержка потоковой обработки: не поддерживает
+
+Типы пременных и функции:
+1. `nlohmann::json` - это JSON-объект `{"id": 1}`
+2. `json::parse` - переводит строку `string` в `nlohmann::json`
+3. `.dump()` - переводит значение `nlohmann::json` в  `string`
+
+Пример кода
+```cpp
+#include <iostream>
+#include <nlohmann/json.hpp>
+using namespace std;
+
+int main()
+{
+	// создание объекта (корректно)
+	nlohmann::json obj = {
+		{"name", "Vova"},
+		{"age", 20}
+	};
+	// перевод в строку
+	string jsonStr = obj.dump();
+	cout << jsonStr << endl;
+	// перевод строки обратно в JSON
+	nlohmann::json parsed = nlohmann::json::parse(jsonStr);
+	// создание массива
+	nlohmann::json arr = nlohmann::json::array();
+	arr.push_back(obj);
+	arr.push_back(obj);
+	arr.push_back(obj);
+	for (const auto& item : arr)
+	{
+		cout << item << "\n";
+	}
+	return 0;
+}
+``` 
 ## RapidJSON
 Особенности:
 
 1. Минимальная версия C++: совместима C++03, но рекомендуется использовать с C++11
 2. Удобство API: 4/5
 3. Поддержка потоковой обработки: поддерживает SAX + DOM (видно по потреблению RAW)
+
+Типы пременных и функции:
+1. `Document`, `Value` - основные типы
+2. `.SetObject()` - задание типа "объект"
+3. `.SetArray()` - задание типа "массив"
+4. `.AddMember()` - добавление в объект
+5. `.PushBack()` - добавление в массив
+6. `.GetString()` - получение значение из типа Document
+7. `.Parse()` - записать значение в тип Document
+8. `.AddMember()` - добавить ключ-значения
+9. `.Accept()`- обход JSON-структуру
+
+Пример кода
+```cpp
+#include <iostream>
+#include <rapidjson/document.h>
+#include <rapidjson/writer.h>
+#include <rapidjson/stringbuffer.h>
+using namespace std;
+
+int main()
+{
+	// создание объекта (корректно)
+	rapidjson::Document d;
+	d.SetObject();
+	rapidjson::Document::AllocatorType& allocator = d.GetAllocator(); // нужно для выделения память
+	d.AddMember("name", "Vova", allocator);
+	d.AddMember("age", 20, allocator);
+	// перевод в строку
+	rapidjson::StringBuffer buffer;
+	rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+	d.Accept(writer);
+	string jsonStr = buffer.GetString();
+	cout << jsonStr;
+	// перевод строки обратно в JSON
+	d.Parse(jsonStr.c_str());
+	// создание массива
+	rapidjson::Value arr(rapidjson::kArrayType);
+	arr.PushBack("apple", allocator).PushBack("orange", allocator).PushBack("kiwi", allocator);
+	d.AddMember("fruits", arr, allocator);
+	return 0;
+}
+``` 
+
 ## JsonCpp
 Особенности:
 
 1. Минимальная версия C++: Старые версии поддерживали C++98, но современные версии требуют C++11
-2. Удобство API: 3.5/5
-3. Поддержка потоковой обработки: не поддерживает 
+2. Удобство API: 4/5
+3. Поддержка потоковой обработки: не поддерживает
 
+Типы пременных и функции:
+1. `CharReaderBuilder` - тип используемый для чтения и создание JSON файла
+2. `Value` - переменная для хранение JSON-данных
+3. `.asString()` - получить строку
+4. `.asInt()`, `.asUInt()` - получить целое число
+5. `.asFloat()`, `.asDouble()` - получить дробное число
+6. `.asBool()` - получить переменную типа bool
+7. `.isObject()` - получить объект
+
+Пример кода
+```cpp
+#include <json/json.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	// создание объекта (корректно)
+	Json::Value root1;
+	root1["name"] = "Vova";
+	root1["age"] = 20;
+	// перевод в строку	
+	Json::StreamWriterBuilder writerBuilder;
+	string jsonStr1 = Json::writeString(writerBuilder, root1);
+	cout << jsonStr1 << endl;
+	// перевод строки в JSON
+	string jsonStr = R"({"name":"Vova", "age":20})";
+	Json::CharReaderBuilder builder;
+	Json::Value root;
+	string errs;
+	istringstream iss(jsonStr);
+	bool success = Json::parseFromStream(builder, iss, &root, &errs);
+	if (!success) 
+	{
+		cerr << "Ошибка парсинга: " << errs << endl;
+		return 1;
+	}
+	cout << "Name: " << root["name"].asString() << endl;
+	cout << "Age: " << root["age"].asInt() << endl;
+	// создание массива
+	Json::Value arr(Json::arrayValue);
+	arr.append("apple");
+	arr.append("orange");
+	arr.append("kiwi");
+	for (const auto& item : arr) {
+		cout << item.asString() << endl;
+	}
+	return 0;
+}
+``` 
 ## Boost.PropertyTree
 Особенности:
 
@@ -341,49 +518,97 @@ Boost.PropertyTree
 2. Удобство API: 5/5
 3. Поддержка потоковой обработки: не поддерживает 
 
+Типы пременных и функции:
+1. `property_tree::ptree` - тип, представляющий JSON-структуру
+2. `.put()` - вставить или заменить значение
+3. `.get<>()` - получить значение
+4. `.put_child()` - 	вставка вложенного объекта/массива
+5. `.push_back()` - добавление элемента в массив
+
+```cpp
+#include <iostream>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+using namespace std;
+
+int main()
+{
+	// создание объекта (корректно)
+	boost::property_tree::ptree p;
+	p.put("name", "Vova");
+	p.put("age", 20);
+	// перевод в строку	
+	ostringstream os;
+	write_json(os, p, false);
+	string jsonStr1 = os.str();
+	cout << jsonStr1 << endl;
+	// перевод строки в JSON
+	string jsonStr = "{\"name\":\"Vova\", \"age\":20}";
+	boost::property_tree::ptree root;
+	stringstream is(jsonStr);
+	read_json(is, root);
+	cout << "Name: " << root.get<string>("name") << endl;
+	cout << "Age: " << root.get<int>("age") << endl;
+	// создание массива
+	boost::property_tree::ptree p1, fruits, fruit1, fruit2, fruit3;
+	fruit1.put("", "apple");
+	fruit2.put("", "orange");
+	fruit3.put("", "kiwi");
+	fruits.push_back(make_pair("", fruit1));
+	fruits.push_back(make_pair("", fruit2));
+	fruits.push_back(make_pair("", fruit3));
+	p1.put_child("fruits", fruits);
+	for (const auto& item : p1.get_child("fruits")) 
+	{
+		cout << item.second.get_value<string>() << "\n";
+	}
+	return 0;
+}
+```
 # Общий вывод
-Динамика изменене скороти чтение
+Динамика изменение скороти чтение
 ![график чтения](https://github.com/user-attachments/assets/ccb9fd1b-b665-4f6b-bd6c-367a2113696d)
 
 
-Динамика изменене скороти записи
+Динамика изменение скороти записи
 ![график записи](https://github.com/user-attachments/assets/52d36c0e-ffdc-4a96-a6ac-71296b46cef9)
 
 
 ## RapidJSON
 Общая характеристика: 
 
-RapidJSON показал себя как самый сбалансированный вариант среди всех библиотек. Он сочетает хорошую скорость и минимальное потребление памяти. Особенно хорошо проявил себя на больших объёмах данных и при работе с большим количеством файлов.
+RapidJSON показал себя как самый сбалансированный вариант среди всех библиотек. Он сочетает хорошую скорость и минимальное потребление памяти. Особенно хорошо проявил себя на больших объёмах данных и при работе с множеством файлов.
 
 Поведение в тестах:
-1. 100 КБ — 1 ГБ: стабильно хорошее время чтения и записи, RAM значительно ниже остальных.
-2. 600 МБ – 1 ГБ: сохраняет производительность и остаётся в пределах 1 ГБ памяти.
+1. 100 КБ — 1 ГБ: стабильно хорошее время чтения и записи, использование RAM значительно ниже, чем у остальных.
+2. 600 МБ – 1 ГБ: сохраняет производительность и остаётся в пределах 1 ГБ оперативной памяти.
 3. Много мелких файлов: второе место по скорости, но лучшее по экономии RAM.
    
 Вывод:
-Это наилучший выбор для большинства практических задач, особенно если работа происходит в условиях ограниченной оперативной памяти или высокая нагрузка.
+Это наилучший выбор для большинства практических задач, особенно если работа ведётся в условиях ограниченной оперативной памяти или высокой нагрузки.
 
 ## JsonCpp
 Общая характеристика:
 
-JsonCpp — это самая быстрая библиотека по времени чтения практически на всех объёмах. Однако она резко увеличивает потребление памяти, особенно при работе с большими файлами.
+JsonCpp — самая быстрая библиотека по времени чтения практически на всех объёмах, однако она резко увеличивает потребление памяти, особенно при работе с большими файлами.
 
 Поведение в тестах:
-1. 100 КБ — 100 МБ: стабильно первое или второе место по скорости, RAM высокое.
+1. 100 КБ — 100 МБ: стабильно первое или второе место по скорости; потребление RAM — высокое.
 2. 600 МБ — 1 ГБ: время чтения лучше всех, но RAM доходит до 5 ГБ.
 3. Много мелких файлов: первое место по скорости, но RAM снова превышает 700 МБ.
 
 Вывод:
-Рекомендуется для задач, где важна максимальная скорость и не критично потребление ОЗУ. Подходит для настольных приложений или серверов с большим объёмом памяти.
+Рекомендуется для задач, где важна максимальная скорость и некритично потребление ОЗУ. Подходит для настольных приложений или серверов с большим объёмом памяти.
 
 ## Boost.JSON
 Общая характеристика:
 
-Boost.JSON демонстрирует среднюю скорость и умеренное потребление памяти. Она работает стабильно на всех объёмах и предсказуема в поведении.
+Boost.JSON демонстрирует среднюю скорость и умеренное потребление памяти. Она работает стабильно на всех объёмах и отличается предсказуемым поведением.
 
 Поведение в тестах:
+
 1. На малых объёмах немного уступает по скорости RapidJSON и JsonCpp.
-2. На крупных объёмах (600 МБ – 1 ГБ) использует около 1.9 ГБ RAM — это разумный компромисс.
+2. На крупных объёмах (600 МБ – 1 ГБ) использует около 1.9 ГБ RAM — разумный компромисс.
 3. Много файлов: производительность на уровне RapidJSON, RAM ~345 МБ.
 
 Вывод:
@@ -400,13 +625,14 @@ nlohmann/json — одна из самых популярных библиоте
 3. Много файлов: самое медленное чтение среди всех.
 
 Вывод:
-Хороший выбор для обучения, прототипирования и небольших файлов. Не рекомендуется для работы с большими данными или в условиях ограниченных ресурсов.
+Хороший выбор для обучения, прототипирования и работы с небольшими файлами. Не рекомендуется для обработки больших объёмов данных или при ограниченных ресурсах.
 
 ## Boost.PropertyTree
 Общая характеристика:
-Boost.PropertyTree очень плохо работает JSON  файлами. Её архитектура ориентирована на простые конфигурационные файлы.
+Boost.PropertyTree очень плохо работает с JSON-файлами. Её архитектура ориентирована на простые конфигурационные форматы.
 
 Поведение в тестах:
+
 1. На всех объёмах — худшее время чтения и записи.
 2. RAM достигает 9–10 ГБ при работе с 1 ГБ JSON.
 3. Даже на мелких файлах работает в 10–15 раз медленнее конкурентов.
