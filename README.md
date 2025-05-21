@@ -8,27 +8,28 @@
 2. **Скорость записи**
 3. **Удобство API**
 4. **Использование оперативной памяти**
-5. **Размер библиотеки**
-6. **Поддержка потоковой обработки (стриминг)**
+5. **Поддержка потоковой обработки (стриминг)**
 
 ---
 
 ## Библиотеки для сравнения
 
-1. [nlohmann/json](https://github.com/nlohmann/json)
-2. [RapidJSON](https://github.com/Tencent/rapidjson)
-3. [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
-4. [Boost.PropertyTree](https://www.boost.org/doc/libs/release/doc/html/property_tree.html)
-5. [Boost.JSON](https://www.boost.org/releases/latest/)
+1. [Boost.JSON](https://www.boost.org/releases/latest/)
+2. [nlohmann/json](https://github.com/nlohmann/json)
+3. [RapidJSON](https://github.com/Tencent/rapidjson)
+4. [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
+5. [Boost.PropertyTree](https://www.boost.org/doc/libs/release/doc/html/property_tree.html)
 
 ---
 
 ## Размеры JSON-файлов для тестирования
-
-1. 10 МБ
-2. 100 МБ
-3. 600 МБ
-4. 1 ГБ
+1. 100 КБ
+2. 1 МБ
+3. 10 МБ
+4. 100 МБ
+5. 600 МБ
+6. 1 ГБ
+7. Много маленьких файлов (размер 1 файла ~238КБ, элементов 474,  общий вес ~111 МБ)
 - [Файлы для теста](https://disk.yandex.ru/d/S24ux_HCso23kg)
 
 ---
@@ -50,6 +51,64 @@
 
 
 # Сравнение производительности библиотек Boost.JSON, nlohmann/json, RapidJSON, JsonCpp и Boost.PropertyTree при работе с JSON-файлом
+## Файлы объемом 100 КБ
+Тестирование:
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">6.673 ms</td><td valign="top">2.753 ms</td><td valign="top">528 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">6.277 ms</td><td valign="top">2.805 ms</td><td valign="top">276 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">6.313 ms</td><td valign="top">2.769 ms</td><td valign="top">260 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>6.42 ms</b></td><td><b>2.78 ms</b></td><td><b>354.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">19.135 ms</td><td valign="top">4.13 ms</td><td valign="top">588 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">16.491 ms</td><td valign="top">2.995 ms</td><td valign="top">684 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">18.337 ms</td><td valign="top">2.87 ms</td><td valign="top">684 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>17.99 ms</b></td><td><b>3.33 ms</b></td><td><b>652 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.434 ms</td><td valign="top">2.557 ms</td><td valign="top">92 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.775 ms</td><td valign="top">3.32 ms</td><td valign="top">60 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">4.835 ms</td><td valign="top">2.846 ms</td><td valign="top">60 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.68 ms</b></td><td><b>2.91 ms</b></td><td><b>70.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">4.333 ms</td><td valign="top">2.224 ms</td><td valign="top">852 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.056 ms</td><td valign="top">3.976 ms</td><td valign="top">664 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">5.13 ms</td><td valign="top">3.43 ms</td><td valign="top">996 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.51 ms</b></td><td><b>3.21 ms</b></td><td><b>837.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">65.759 ms</td><td valign="top">9.167 ms</td><td valign="top">1896 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">60.355 ms</td><td valign="top">7.758 ms</td><td valign="top">1492 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">62.82 ms</td><td valign="top">8.555 ms</td><td valign="top">1632 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>62.98 ms</b></td><td><b>8.49 ms</b></td><td><b>1673.33 KB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма](https://github.com/user-attachments/assets/38585e17-3fcd-483e-9cda-1b63c5936b41)
+
+**Вывод:** RapidJSON продемонстрировала самое быстрое время чтения 4.68 мс и минимальное использование оперативной памяти 71 КБ, Boost.JSON быстее всего записывает JSON-формат  
+
+## Файлы объемом 1 МБ
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">40.374 ms</td><td valign="top">16.017 ms</td><td valign="top">1688 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">37.127 ms</td><td valign="top">17.153 ms</td><td valign="top">1648 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">38.08 ms</td><td valign="top">16.54 ms</td><td valign="top">2152 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>38.53 ms</b></td><td><b>16.57 ms</b></td><td><b>1829.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">112.243 ms</td><td valign="top">24.408 ms</td><td valign="top">3652 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">131.454 ms</td><td valign="top">19.31 ms</td><td valign="top">3476 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">119.581 ms</td><td valign="top">21.985 ms</td><td valign="top">3496 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>121.09 ms</b></td><td><b>21.9 ms</b></td><td><b>3541.33 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">26.355 ms</td><td valign="top">24.518 ms</td><td valign="top">540 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">34.542 ms</td><td valign="top">19.89 ms</td><td valign="top">508 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">27.495 ms</td><td valign="top">25.031 ms</td><td valign="top">508 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>29.46 ms</b></td><td><b>23.15 ms</b></td><td><b>518.67 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">19.296 ms</td><td valign="top">17.557 ms</td><td valign="top">5112 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">23.998 ms</td><td valign="top">16.495 ms</td><td valign="top">5480 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">19.846 ms</td><td valign="top">15.854 ms</td><td valign="top">5236 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>21.05 ms</b></td><td><b>16.64 ms</b></td><td><b>5276 KB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">457.976 ms</td><td valign="top">50.697 ms</td><td valign="top">10232 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">493.723 ms</td><td valign="top">54.366 ms</td><td valign="top">10800 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">436.042 ms</td><td valign="top">46.675 ms</td><td valign="top">10316 KB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>462.58 ms</b></td><td><b>50.58 ms</b></td><td><b>10449.33 KB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма2](https://github.com/user-attachments/assets/257a2be5-af2c-4e58-97a5-0eebf2886958)
+
+**Вывод:** JsonCpp показала лучшее среднее время чтения — 21.05 мс, RapidJSON заняла первое место по экономии памяти 519 КБ, Boost.JSON продемонстрировала хорошие результаты в категории: время записи — 16.57 мс
 ## Файлы объемом 10 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -75,7 +134,11 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>5313.26 ms</b></td><td valign="top"><b>469.77 ms</b></td><td valign="top"><b>108.33 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма3](https://github.com/user-attachments/assets/e0263c27-a33c-42bb-ba1b-5ee23427eb83)
+
+
+**Вывод:** RapidJSON осталась самой экономичной по оперативной памяти — 12 МБ, JsonCpp заняла первое место по скорости чтения 268.84 мс, Boost.JSON остается первым среди записи JSON-файлов
 ## Файлы объемом 100 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -101,7 +164,10 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>47.99 s</b></td><td valign="top"><b>4.93 s</b></td><td valign="top"><b>978.33 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма4](https://github.com/user-attachments/assets/7f58381a-af90-4775-a534-f00a0365b666)
+
+**Вывод:** JsonCpp показала лучшее среднее время чтения — 2.71 секунды, RapidJSON использовала всего 110 МБ оперативной памяти, Boost.JSON оказалась на первом месте среди записи 1.57 секунд
 ## Файлы объемом 600 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
@@ -127,7 +193,10 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>296.09 s</b></td><td valign="top"><b>30.85 s</b></td><td valign="top"><b>5585 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма5](https://github.com/user-attachments/assets/1447cfac-7a90-4a80-be29-6390bbbcab58)
+
+**Вывод:** JsonCpp показала самое быстрое среднее время чтения — 17.04 с,RapidJSON продемонстрировала хорошую экономию памяти — в среднем 558.67 МБ, Boost.JSON справилась с задачей за 25.98 с на чтение и 12.25 с на запись.
 
 ## Файлы объемом 1 ГБ
 Тестирование:
@@ -154,16 +223,196 @@
 <tr><td valign="top">Среднее</td><td valign="top"><b>522.25 s</b></td><td valign="top"><b>54.2 s</b></td><td valign="top"><b>8958 МB</b></td></tr>
 </table>
 
-**Вывод:** 
+**Гистограмма:** 
+![Гистограмма6](https://github.com/user-attachments/assets/ba460daf-6b28-4c36-bb8f-7866087da81d)
 
-# Инструкция по библиотеке
+**Вывод:** JsonCpp снова продемонстрировала лучшее среднее время чтения — 28.6 секунды, RapidJSON показала отличные результаты: чтение — 34.95 секунды, запись — 23.36 секунды, а использование оперативной памяти — в среднем менее 1 ГБ, что делает её наиболее сбалансированной среди всех протестированных библиотек. Boost.JSON выдала среднее время чтения — 43.81 секунды и время записи — 17.01 секунды, потребляя при этом около 1.9 ГБ памяти. 
+## Много маленьких файлов (размер 1 файла ~238КБ, элементов 474,  общий вес ~111 МБ)
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">5.47369 s</td><td valign="top">2.66735 s</td><td valign="top">346 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">5.43559 s</td><td valign="top">2.27795 s</td><td valign="top">345 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">5.42531 s</td><td valign="top">2.40959 s</td><td valign="top">344 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>5.44 s</b></td><td><b>2.45 s</b></td><td><b>345 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>nlohmann/json</b></p></td><td valign="top">1</td><td valign="top">17.1532 s</td><td valign="top">3.74216 s</td><td valign="top">695 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">17.4249 s</td><td valign="top">3.76482 s</td><td valign="top">693 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">17.2868 s</td><td valign="top">3.76755 s</td><td valign="top">695 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>17.29 s</b></td><td><b>3.76 s</b></td><td><b>694.33 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.33146 s</td><td valign="top">3.33572 s</td><td valign="top">76 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.29226 s</td><td valign="top">3.32748 s</td><td valign="top">72 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">4.29556 s</td><td valign="top">3.27255 s</td><td valign="top">193 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>4.31 s</b></td><td><b>3.31 s</b></td><td><b>113.67 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>JsonCpp</b></p></td><td valign="top">1</td><td valign="top">3.69359 s</td><td valign="top">2.6281 s</td><td valign="top">735 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">3.69702 s</td><td valign="top">2.69284 s</td><td valign="top">708 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">3.56635 s</td><td valign="top">2.73653 s</td><td valign="top">678 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>3.65 s</b></td><td><b>2.69 s</b></td><td><b>707 МB</b></td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">65.6019 s</td><td valign="top">8.00069 s</td><td valign="top">1476 МB</td></tr>
+<tr><td valign="top">2</td><td valign="top">66.6822 s</td><td valign="top">8.04298 s</td><td valign="top">1678 МB</td></tr>
+<tr><td valign="top">3</td><td valign="top">65.7737 s</td><td valign="top">7.86118 s</td><td valign="top">1308 МB</td></tr>
+<tr><td valign="top">Среднее</td><td><b>66.02 s</b></td><td><b>7.97 s</b></td><td><b>1487.33 МB</b></td></tr>
+</table>
+
+**Гистограмма:** 
+![Гистограмма7](https://github.com/user-attachments/assets/fa32b31e-90da-47ab-b776-0e3b005d47b7)
+
+**Вывод:** JsonCpp показала лучшее среднее время чтения — 3.65 с, RapidJSON занимает первое место среди экономии потребления RAW памяти, Boost.JSON показала устойчивые результаты: время чтения — 5.44 с, время записи — 2.45 с, и умеренное использование памяти — 345 МБ.
+
+# Инструкция по библиотеки
+## Установка библиотек
+Все Библиотеки устанавливались через **vcpkg**
+1. устанавливаем vcpkg
+```cmd
+git clone https://github.com/microsoft/vcpkg
+```
+2. Переходим в каталог
+```cmd
+cd vcpkg
+```
+3. устанавливаем библиотеки
+```cmd
+vcpkg install rapidjson
+vcpkg install simdjson
+vcpkg install jsoncpp
+vcpkg install boost-property-tree
+vcpkg install boost-json
+```
+**ВАЖНО** В сравнении используется компилятор MinGW, и библиотеки скачены были для него (у них расширение .a). Библиотеки типа .lib для Visual Studio имеют другую произодительность: Boost.PropertyTree, nlohmann/json потребляюе в 2 раза больше RAW
+
+4. добавляем библиотеки в проект.
+
+пример:
+```cpp
+set(nlohmann_json_DIR "C:/Users/[имя пользователя]/vcpkg/installed/x64-mingw-static/share/nlohmann_json/")
+find_package(nlohmann_json CONFIG REQUIRED)
+```
+5. В проекте вызываем библиотека
+   
+Boost.JSON
+```cpp
+#include <boost/json.hpp>
+```
+nlohmann/json
+```cpp
+#include <nlohmann/json.hpp>
+```
+RapidJSON
+```cpp
+#include <rapidjson/document.h>
+#include <rapidjson/writer.h>
+#include <rapidjson/stringbuffer.h>
+```
+JsonCpp
+```cpp
+#include <json/json.h>
+```
+Boost.PropertyTree
+```cpp
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/json_parser.hpp>
+```
 ## Boost.JSON
+Особенности:
+
+1. Минимальная версия C++: C++11
+2. Удобство API: 5/5
+3. Поддержка потоковой обработки: поддержка частичная
 ## nlohmann/json
+Особенности:
+
+1. Минимальная версия C++: C++11, но рекомедуется C++17
+2. Удобство API: 5/5
+3. Поддержка потоковой обработки: не поддерживает 
 ## RapidJSON
+Особенности:
+
+1. Минимальная версия C++: совместима C++03, но рекомендуется использовать с C++11
+2. Удобство API: 4/5
+3. Поддержка потоковой обработки: поддерживает SAX + DOM (видно по потреблению RAW)
 ## JsonCpp
+Особенности:
+
+1. Минимальная версия C++: Старые версии поддерживали C++98, но современные версии требуют C++11
+2. Удобство API: 3.5/5
+3. Поддержка потоковой обработки: не поддерживает 
+
 ## Boost.PropertyTree
+Особенности:
+
+1. Минимальная версия C++: C++03
+2. Удобство API: 5/5
+3. Поддержка потоковой обработки: не поддерживает 
 
 # Общий вывод
+Динамика изменене скороти чтение
+![график чтения](https://github.com/user-attachments/assets/ccb9fd1b-b665-4f6b-bd6c-367a2113696d)
+
+
+Динамика изменене скороти записи
+![график записи](https://github.com/user-attachments/assets/52d36c0e-ffdc-4a96-a6ac-71296b46cef9)
+
+
+## RapidJSON
+Общая характеристика: 
+
+RapidJSON показал себя как самый сбалансированный вариант среди всех библиотек. Он сочетает хорошую скорость и минимальное потребление памяти. Особенно хорошо проявил себя на больших объёмах данных и при работе с большим количеством файлов.
+
+Поведение в тестах:
+1. 100 КБ — 1 ГБ: стабильно хорошее время чтения и записи, RAM значительно ниже остальных.
+2. 600 МБ – 1 ГБ: сохраняет производительность и остаётся в пределах 1 ГБ памяти.
+3. Много мелких файлов: второе место по скорости, но лучшее по экономии RAM.
+   
+Вывод:
+Это наилучший выбор для большинства практических задач, особенно если работа происходит в условиях ограниченной оперативной памяти или высокая нагрузка.
+
+## JsonCpp
+Общая характеристика:
+
+JsonCpp — это самая быстрая библиотека по времени чтения практически на всех объёмах. Однако она резко увеличивает потребление памяти, особенно при работе с большими файлами.
+
+Поведение в тестах:
+1. 100 КБ — 100 МБ: стабильно первое или второе место по скорости, RAM высокое.
+2. 600 МБ — 1 ГБ: время чтения лучше всех, но RAM доходит до 5 ГБ.
+3. Много мелких файлов: первое место по скорости, но RAM снова превышает 700 МБ.
+
+Вывод:
+Рекомендуется для задач, где важна максимальная скорость и не критично потребление ОЗУ. Подходит для настольных приложений или серверов с большим объёмом памяти.
+
+## Boost.JSON
+Общая характеристика:
+
+Boost.JSON демонстрирует среднюю скорость и умеренное потребление памяти. Она работает стабильно на всех объёмах и предсказуема в поведении.
+
+Поведение в тестах:
+1. На малых объёмах немного уступает по скорости RapidJSON и JsonCpp.
+2. На крупных объёмах (600 МБ – 1 ГБ) использует около 1.9 ГБ RAM — это разумный компромисс.
+3. Много файлов: производительность на уровне RapidJSON, RAM ~345 МБ.
+
+Вывод:
+Подходит для проектов, где уже используется Boost. Хороший компромисс между производительностью и удобством интеграции в экосистему.
+
+## nlohmann/json
+Общая характеристика:
+
+nlohmann/json — одна из самых популярных библиотек благодаря простоте синтаксиса. Однако она уступает остальным в производительности и значительно проигрывает по памяти.
+
+Поведение в тестах:
+1. 100 КБ — 10 МБ: уже ощутимо медленнее конкурентов.
+2. 100 МБ – 1 ГБ: проигрывает по времени и использует до 4 ГБ RAM.
+3. Много файлов: самое медленное чтение среди всех.
+
+Вывод:
+Хороший выбор для обучения, прототипирования и небольших файлов. Не рекомендуется для работы с большими данными или в условиях ограниченных ресурсов.
+
+## Boost.PropertyTree
+Общая характеристика:
+Boost.PropertyTree очень плохо работает JSON  файлами. Её архитектура ориентирована на простые конфигурационные файлы.
+
+Поведение в тестах:
+1. На всех объёмах — худшее время чтения и записи.
+2. RAM достигает 9–10 ГБ при работе с 1 ГБ JSON.
+3. Даже на мелких файлах работает в 10–15 раз медленнее конкурентов.
+
+Вывод:
+Категорически не рекомендуется для работы с JSON. Использовать только для XML/INI или простых задач, где JSON — временное решение.
 
 # Демонстрация вывода программы
 ![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
