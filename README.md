@@ -228,6 +228,7 @@
 
 **Вывод:** JsonCpp снова продемонстрировала лучшее среднее время чтения — 28.6 секунды, RapidJSON показала отличные результаты: чтение — 34.95 секунды, запись — 23.36 секунды, а использование оперативной памяти — в среднем менее 1 ГБ, что делает её наиболее сбалансированной среди всех протестированных библиотек. Boost.JSON выдала среднее время чтения — 43.81 секунды и время записи — 17.01 секунды, потребляя при этом около 1.9 ГБ памяти. 
 ## Много маленьких файлов (размер 1 файла ~238КБ, элементов 474,  общий вес ~111 МБ)
+Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
 <tr><td rowspan="4" valign="top"><p></p><p><b>Boost.JSON</b></p></td><td valign="top">1</td><td valign="top">5.47369 s</td><td valign="top">2.66735 s</td><td valign="top">346 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">5.43559 s</td><td valign="top">2.27795 s</td><td valign="top">345 МB</td></tr>
@@ -255,6 +256,33 @@
 ![Гистограмма7](https://github.com/user-attachments/assets/fa32b31e-90da-47ab-b776-0e3b005d47b7)
 
 **Вывод:** JsonCpp показала лучшее среднее время чтения — 3.65 с, RapidJSON занимает первое место среди экономии потребления RAW памяти, Boost.JSON показала устойчивые результаты: время чтения — 5.44 с, время записи — 2.45 с, и умеренное использование памяти — 345 МБ.
+
+
+## Тест на доступ ключам
+Тестирование:
+
+<table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время записи в библиотеку (ДЛЯ ФАЙЛА input.json) </th><th valign="top"><p>Время доступа к ключам (ДЛЯ ФАЙЛА input.json)</p><p></p></th><th valign="top"><p>Время записи после изменений (ДЛЯ ФАЙЛА input.json)</p><p></p></th></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>Boot.JON</b></p></td><td valign="top">1</td><td valign="top">0.084 ms</td><td valign="top">18 mks</td><td valign="top">27.9243 s</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.049 ms</td><td valign="top">27 mks</td><td valign="top">28.408 s</td></tr>
+<tr><td valign="top">Среднее</td><td>66.5 mks</td><td>22.5 mks</td><td>28.17 s</td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>nlohmann/jon</b></p></td><td valign="top">1</td><td valign="top">0.048 ms</td><td valign="top">5 mks</td><td valign="top">75.9591 s</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.039 ms</td><td valign="top">8 mks</td><td valign="top">76.4959 s</td></tr>
+<tr><td valign="top">Среднее</td><td><b>43.5 mks</b></td><td><b>6.5 mks</b></td><td><b>76.23 s</b></td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">0.036 ms</td><td valign="top">6 mks</td><td valign="top">71.7668 s</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.014 ms</td><td valign="top">8 mks</td><td valign="top">73.1432 s</td></tr>
+<tr><td valign="top">Среднее</td><td><b>25 mks</b></td><td><b>7 mks</b></td><td><b>72.46 s</b></td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>JonCpp</b></p></td><td valign="top">1</td><td valign="top">0.035 ms</td><td valign="top">6 mks</td><td valign="top">24.3215 s</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.016 ms</td><td valign="top">7 mks</td><td valign="top">24.8053 s</td></tr>
+<tr><td valign="top">Среднее</td><td><b>25.5 mks</b></td><td><b>6.5 mks</b></td><td><b>24.56 s</b></td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">0.153 ms</td><td valign="top">12 mks</td><td valign="top">79.2531 s</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.131 ms</td><td valign="top">9 mks</td><td valign="top">80.5992 s</td></tr>
+<tr><td valign="top">Среднее</td><td><b>142 mks</b></td><td><b>10.5 mks</b></td><td><b>79.93 s</b></td></tr>
+</table>
+
+**Гистограмма:**
+![Гистограмма8](https://github.com/user-attachments/assets/1fcede59-0b0e-4158-a792-3a61e3428de7)
+
+**Вывод:** наилучший результат показали библиотеки JsonCpp и nlohmann/json, справившись с задачей быстрее других — в среднем за 6.5 микросекунд
 
 # Инструкция по библиотекам
 
@@ -641,4 +669,5 @@ Boost.PropertyTree очень плохо работает с JSON-файлами
 Категорически не рекомендуется для работы с JSON. Использовать только для XML/INI или простых задач, где JSON — временное решение.
 
 # Демонстрация вывода программы
-![image](https://github.com/user-attachments/assets/4d7c15cc-21b2-471d-aafd-4e451080d590)
+![демонстрация](https://github.com/user-attachments/assets/7db52534-933d-40f3-879e-2e0be459a39b)
+![демонстрация 2](https://github.com/user-attachments/assets/e36dc1a9-4afa-410d-94fe-841c8e966196)
