@@ -278,6 +278,7 @@
 <tr><td valign="top">2</td><td valign="top">91.6617 s</td><td valign="top">1120.77 s</td></tr>
 <tr><td valign="top">Среднее</td><td><b>84.03</b> s</td><td><b>1048.86</b> s</td></tr>
 </table>
+
 **Гистограмма:**
 
 ![Гистограмма9](https://github.com/user-attachments/assets/78bb7c47-7d67-4e8e-abd5-81e3cb83f424)
