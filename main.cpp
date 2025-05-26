@@ -40,10 +40,10 @@ int main()
     stats = BoostJSON(file, choice, sampleValues);
     Results(stats);
     Reset();
-    /*wcout << L"3 запуск: " << endl;
+    wcout << L"3 запуск: " << endl;
     stats = BoostJSON(file, choice, sampleValues);
     Results(stats);
-    Reset();*/
+    Reset();
 
     wcout << L"Рeзультаты библиотеки nlohmann/json:" << endl;
     wcout << L"1 запуск: " << endl;
@@ -54,10 +54,10 @@ int main()
     stats = NlohmannJson(file, choice, sampleValues);
     Results(stats);
     Reset();
-    /*wcout << L"3 запуск: " << endl;
+    wcout << L"3 запуск: " << endl;
     stats = NlohmannJson(file, choice, sampleValues);
     Results(stats);
-    Reset();*/
+    Reset();
 
     wcout << L"Рeзультаты библиотеки RapidJSON:" << endl;
     wcout << L"1 запуск: " << endl;
@@ -68,10 +68,10 @@ int main()
     stats = RapidJSON(file, choice, sampleValues);
     Results(stats);
     Reset();
-    /*wcout << L"3 запуск: " << endl;
+    wcout << L"3 запуск: " << endl;
     stats = RapidJSON(file, choice, sampleValues);
     Results(stats);
-    Reset();*/
+    Reset();
 
 
     wcout << L"Рeзультаты библиотеки JsonCpp:" << endl;
@@ -83,10 +83,10 @@ int main()
     stats = JsonCpp(file, choice, sampleValues);
     Results(stats);
     Reset();
-    /*wcout << L"3 запуск: " << endl;
+    wcout << L"3 запуск: " << endl;
     stats = JsonCpp(file, choice, sampleValues);
     Results(stats);
-    Reset();*/
+    Reset();
 
     wcout << L"Рeзультаты библиотеки Boost.PropertyTree:" << endl;
     wcout << L"1 запуск: " << endl;
@@ -97,10 +97,12 @@ int main()
     stats = BoostPropertyTree(file, choice, sampleValues);
     Results(stats);
     Reset();
-    /*wcout << L"3 запуск: " << endl;
+    wcout << L"3 запуск: " << endl;
     stats = BoostPropertyTree(file, choice, sampleValues);
     Results(stats);
-    Reset();*/
+    Reset();
     system("pause");
+    system("pause");
+
     return 0;
 }

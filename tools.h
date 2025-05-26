@@ -94,7 +94,7 @@ void Results(Stats stats)
     wcout << L"Время записи: " << stats.WriteTime << L" ms или " << stats.WriteTime / 1000 << " s" << endl;
     wcout << L"Приблиз. использование памяти: " << stats.RAWMemory << L" KB или " << stats.RAWMemory / 1024 << L" МB" << endl;
     wcout << L"Время построчной записи в библиотеку (ДЛЯ ФАЙЛА input.json): " << stats.ReadTimeV2 << L" ms или " << stats.ReadTimeV2 / 1000 << " s" << endl;
-    wcout << L"Время построчного чтение в библиотеку (ДЛЯ ФАЙЛА input.json): " << stats.ReadTimeV3 << L" ms или " << stats.ReadTimeV3 / 1000 <<" s" << endl;
+    wcout << L"Время построчного чтение в библиотеку (ДЛЯ ФАЙЛА input.json): " << stats.ReadTimeV3 << L" ms или " << stats.ReadTimeV3 / 1000 <<" s" << endl<< endl;
 }
 
 void Reset()

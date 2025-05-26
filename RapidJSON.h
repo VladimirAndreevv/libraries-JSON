@@ -112,7 +112,7 @@ Stats RapidJSON(const string& files, bool choice, const vector<string> sampleVal
     auto endWrite = chrono::high_resolution_clock::now();
     stats.WriteTime = chrono::duration_cast<chrono::microseconds>(endWrite - startWrite).count() / 1000.0;
 
-    auto startReadingV2 = chrono::high_resolution_clock::now();
+ auto startReadingV2 = chrono::high_resolution_clock::now();
  rapidjson::Document templateRecord = LinearRecordRapid(sampleValues, stats);
  auto endReadingV2 = chrono::high_resolution_clock::now();
  stats.ReadTimeV2 = chrono::duration_cast<chrono::microseconds>(endReadingV2 - startReadingV2).count() / 1000.0;

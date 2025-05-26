@@ -3,6 +3,7 @@ cmake_policy(SET CMP0167 NEW)
 project(JSON LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 add_executable(JSON
     main.cpp
