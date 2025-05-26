@@ -62,15 +62,15 @@
 <tr><td valign="top">2</td><td valign="top">4.223 ms</td><td valign="top">1.375 ms</td><td valign="top">344 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">3.997 ms</td><td valign="top">1.426 ms</td><td valign="top">460 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>4.21 ms</b></td><td><b>1.39 ms</b></td><td><b>516 KB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">0.876 ms</td><td valign="top">0.719 ms</td><td valign="top">84 KB</td></tr>
-<tr><td valign="top">2</td><td valign="top">0.8 ms</td><td valign="top">0.796 ms</td><td valign="top"> KB</td></tr>
-<tr><td valign="top">3</td><td valign="top">0.751 ms</td><td valign="top">0.624 ms</td><td valign="top"> KB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">0.876 ms</td><td valign="top">0.719 ms</td><td valign="top">84 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">0.8 ms</td><td valign="top">0.796 ms</td><td valign="top">72 KB</td></tr>
+<tr><td valign="top">3</td><td valign="top">0.751 ms</td><td valign="top">0.624 ms</td><td valign="top">72 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>0.81 ms</b></td><td><b>0.71 ms</b></td><td><b>76 KB</b></td></tr>
 <tr><td rowspan="4" valign="top"><p></p><p><b>JonCpp</b></p></td><td valign="top">1</td><td valign="top">4.888 ms</td><td valign="top">3.6 ms</td><td valign="top">776 KB</td></tr>
 <tr><td valign="top">2</td><td valign="top">7.709 ms</td><td valign="top">5.05 ms</td><td valign="top">760 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">6.616 ms</td><td valign="top">5.844 ms</td><td valign="top">808 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>6.4 ms</b></td><td><b>4.83 ms</b></td><td><b>781.33 KB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">10.926 ms</td><td valign="top">2.942 ms</td><td valign="top">1940 KB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">10.926 ms</td><td valign="top">2.942 ms</td><td valign="top">1940 KB</td></tr>
 <tr><td valign="top">2</td><td valign="top">11.76 ms</td><td valign="top">3.607 ms</td><td valign="top">1264 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">11.391 ms</td><td valign="top">2.815 ms</td><td valign="top">1756 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>11.36 ms</b></td><td><b>3.12 ms</b></td><td><b>1653.33 KB</b></td></tr>
@@ -86,6 +86,7 @@
 **Вывод:** RapidJSON показала наилучшее время чтения — 0.81 мс — и минимальное использование оперативной памяти — 76 КБ. Boost.JSON обеспечила самую быструю скорость записи — в среднем 0.58 мс.
 
 ## Файлы объемом 1 МБ
+
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
 <tr><td rowspan="4" valign="top"><p></p><p><b>Boot.JON</b></p></td><td valign="top">1</td><td valign="top">7.871 ms</td><td valign="top">3.554 ms</td><td valign="top">1516 KB</td></tr>
 <tr><td valign="top">2</td><td valign="top">7.665 ms</td><td valign="top">3.551 ms</td><td valign="top">1200 KB</td></tr>
@@ -95,19 +96,20 @@
 <tr><td valign="top">2</td><td valign="top">26.433 ms</td><td valign="top">8.202 ms</td><td valign="top">3500 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">26.429 ms</td><td valign="top">8.104 ms</td><td valign="top">3508 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>26.37 ms</b></td><td><b>8.13 ms</b></td><td><b>3528 KB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">4.685 ms</td><td valign="top">3.699 ms</td><td valign="top">384 KB</td></tr>
-<tr><td valign="top">2</td><td valign="top">4.58 ms</td><td valign="top">4.092 ms</td><td valign="top">3 KB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.685 ms</td><td valign="top">3.699 ms</td><td valign="top">384 KB</td></tr>
+<tr><td valign="top">2</td><td valign="top">4.58 ms</td><td valign="top">4.092 ms</td><td valign="top">372 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">4.382 ms</td><td valign="top">3.694 ms</td><td valign="top">372 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>4.55 ms</b></td><td><b>3.83 ms</b></td><td><b>376 KB</b></td></tr>
 <tr><td rowspan="4" valign="top"><p></p><p><b>JonCpp</b></p></td><td valign="top">1</td><td valign="top">31.227 ms</td><td valign="top">20.916 ms</td><td valign="top">5080 KB</td></tr>
 <tr><td valign="top">2</td><td valign="top">30.504 ms</td><td valign="top">20.808 ms</td><td valign="top">5488 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">28.997 ms</td><td valign="top">20.3 ms</td><td valign="top">5084 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>30.24 ms</b></td><td><b>20.67 ms</b></td><td><b>5217.33 KB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">69.28 ms</td><td valign="top">19.259 ms</td><td valign="top">10628 KB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">69.28 ms</td><td valign="top">19.259 ms</td><td valign="top">10628 KB</td></tr>
 <tr><td valign="top">2</td><td valign="top">69.235 ms</td><td valign="top">17.323 ms</td><td valign="top">10096 KB</td></tr>
 <tr><td valign="top">3</td><td valign="top">69.222 ms</td><td valign="top">16.833 ms</td><td valign="top">11084 KB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>69.25 ms</b></td><td><b>17.81 ms</b></td><td><b>10602.67 KB</b></td></tr>
 </table>
+
 
 
 
@@ -116,6 +118,7 @@
 
 
 **Вывод:** RapidJSON продемонстрировала наилучшее среднее время чтения — 4.55 мс — и самое низкое использование оперативной памяти — 376 КБ. Boost.JSON показала лучшее среднее время записи — 3.57 мс.
+## Файлы объемом 10 МБ
 Тестирование:
 <table><tr><th valign="top">Библиотека</th><th valign="top">Попытка</th><th valign="top">Время чтения</th><th valign="top">Время записи</th><th valign="top">Приблиз. использование памяти (RAM)</th></tr>
 <tr><td rowspan="4" valign="top"><p></p><p><b>Boot.JON</b></p></td><td valign="top">1</td><td valign="top">79.503 ms</td><td valign="top">31.888 ms</td><td valign="top">22 МB</td></tr>
@@ -126,7 +129,7 @@
 <tr><td valign="top">2</td><td valign="top">263.983 ms</td><td valign="top">78.535 ms</td><td valign="top">43 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">265.929 ms</td><td valign="top">79.349 ms</td><td valign="top">43 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>265.57 ms</b></td><td><b>79.24 ms</b></td><td><b>43 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">47.612 ms</td><td valign="top">45.17 ms</td><td valign="top">12 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">47.612 ms</td><td valign="top">45.17 ms</td><td valign="top">12 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">48.304 ms</td><td valign="top">43.648 ms</td><td valign="top">12 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">49.636 ms</td><td valign="top">42.75 ms</td><td valign="top">12 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>48.52 ms</b></td><td><b>43.86 ms</b></td><td><b>12 МB</b></td></tr>
@@ -134,11 +137,13 @@
 <tr><td valign="top">2</td><td valign="top">306.638 ms</td><td valign="top">199.444 ms</td><td valign="top">56 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">305.999 ms</td><td valign="top">198.027 ms</td><td valign="top">57 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>305.76 ms</b></td><td><b>199.4 ms</b></td><td><b>56.67 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">701.878 ms</td><td valign="top">179.293 ms</td><td valign="top">109 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">701.878 ms</td><td valign="top">179.293 ms</td><td valign="top">109 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">697.31 ms</td><td valign="top">179.406 ms</td><td valign="top">108 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">698.287 ms</td><td valign="top">178.673 ms</td><td valign="top">108 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>699.16 ms</b></td><td><b>179.12 ms</b></td><td><b>108.33 МB</b></td></tr>
 </table>
+
+
 
 
 
@@ -161,7 +166,7 @@
 <tr><td valign="top">2</td><td valign="top">2422.35 ms</td><td valign="top">732.368 ms</td><td valign="top">393 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">2337.18 ms</td><td valign="top">693.348 ms</td><td valign="top">393 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>2442.38 ms</b></td><td><b>714.37 ms</b></td><td><b>393.33 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">449.861 ms</td><td valign="top">412.871 ms</td><td valign="top">110 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">449.861 ms</td><td valign="top">412.871 ms</td><td valign="top">110 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">442.727 ms</td><td valign="top">401.238 ms</td><td valign="top">109 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">444.783 ms</td><td valign="top">399.721 ms</td><td valign="top">109 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>445.79 ms</b></td><td><b>404.61 ms</b></td><td><b>109.33 МB</b></td></tr>
@@ -169,7 +174,7 @@
 <tr><td valign="top">2</td><td valign="top">2782.07 ms</td><td valign="top">1778.16 ms</td><td valign="top">513 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">2765.88 ms</td><td valign="top">1787.07 ms</td><td valign="top">513 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>2822.72 ms</b></td><td><b>1781.62 ms</b></td><td><b>513 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">6344.11 ms</td><td valign="top">1680.15 ms</td><td valign="top">980 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">6344.11 ms</td><td valign="top">1680.15 ms</td><td valign="top">980 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">6356.97 ms</td><td valign="top">1611.91 ms</td><td valign="top">978 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">6357.8 ms</td><td valign="top">1604.86 ms</td><td valign="top">978 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>6352.96</b> <b>ms</b></td><td><b>1632.31 ms</b></td><td><b>978.67 МB</b></td></tr>
@@ -193,7 +198,7 @@
 <tr><td valign="top">2</td><td valign="top">15.2407 s</td><td valign="top">4.42404 s</td><td valign="top">2462 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">15.4006 s</td><td valign="top">4.44008 s</td><td valign="top">2463 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>15.44 s</b></td><td><b>4.58 s</b></td><td><b>2463.33 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">2.72234 s</td><td valign="top">2.72429 s</td><td valign="top">511 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">2.72234 s</td><td valign="top">2.72429 s</td><td valign="top">511 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">2.70451 s</td><td valign="top">2.64792 s</td><td valign="top">483 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">2.85034 s</td><td valign="top">2.67239 s</td><td valign="top">688 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>2.76 s</b></td><td><b>2.68 s</b></td><td><b>560.67 МB</b></td></tr>
@@ -201,7 +206,7 @@
 <tr><td valign="top">2</td><td valign="top">17.9123 s</td><td valign="top">11.0867 s</td><td valign="top">2940 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">17.8024 s</td><td valign="top">11.1429 s</td><td valign="top">3218 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>18.09 s</b></td><td><b>11.14 s</b></td><td><b>3055.67 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">42.0132 s</td><td valign="top">11.0726 s</td><td valign="top">6135 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">42.0132 s</td><td valign="top">11.0726 s</td><td valign="top">6135 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">42.7936 s</td><td valign="top">10.4962 s</td><td valign="top">6134 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">45.149 s</td><td valign="top">10.141 s</td><td valign="top">4888 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>43.32 s</b></td><td><b>10.57 s</b></td><td><b>5719 МB</b></td></tr>
@@ -226,7 +231,7 @@
 <tr><td valign="top">2</td><td valign="top">20.6582 s</td><td valign="top">5.86691 s</td><td valign="top">3858 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">20.5032 s</td><td valign="top">5.84947 s</td><td valign="top">3524 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>20.64 s</b></td><td><b>5.81 s</b></td><td><b>3748 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">4.37108 s</td><td valign="top">5.31833 s</td><td valign="top">1082 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">4.37108 s</td><td valign="top">5.31833 s</td><td valign="top">1082 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">4.27775 s</td><td valign="top">5.438 s</td><td valign="top">1079 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">3.96741 s</td><td valign="top">5.40932 s</td><td valign="top">739 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>4.21 s</b></td><td><b>5.39 s</b></td><td><b>966.67 МB</b></td></tr>
@@ -234,11 +239,13 @@
 <tr><td valign="top">2</td><td valign="top">24.5905 s</td><td valign="top">16.3223 s</td><td valign="top">4607 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">24.9263 s</td><td valign="top">16.0626 s</td><td valign="top">5043 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>25.18 s</b></td><td><b>16.05 s</b></td><td><b>4897.67 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">58.6224 s</td><td valign="top">17.9931 s</td><td valign="top">9613 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">58.6224 s</td><td valign="top">17.9931 s</td><td valign="top">9613 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">62.6208 s</td><td valign="top">16.2797 s</td><td valign="top">9613 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">68.5794 s</td><td valign="top">16.4328 s</td><td valign="top">7691 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>63.27 s</b></td><td><b>16.9 s</b></td><td><b>8972.33 МB</b></td></tr>
 </table>
+
+
 
 
 **Гистограмма:** 
@@ -258,7 +265,7 @@
 <tr><td valign="top">2</td><td valign="top">3.42135 s</td><td valign="top">1.01791 s</td><td valign="top">695 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">3.47991 s</td><td valign="top">0.99989 s</td><td valign="top">694 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>3.51 s</b></td><td><b>1.02 s</b></td><td><b>695 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">0.659422 s</td><td valign="top">0.920955 s</td><td valign="top">193 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">0.659422 s</td><td valign="top">0.920955 s</td><td valign="top">193 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">0.590949 s</td><td valign="top">0.895933 s</td><td valign="top">94 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">0.590815 s</td><td valign="top">0.951909 s</td><td valign="top">91 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>0.61 s</b></td><td><b>0.92 s</b></td><td><b>126 МB</b></td></tr>
@@ -266,11 +273,12 @@
 <tr><td valign="top">2</td><td valign="top">3.88686 s</td><td valign="top">2.8398 s</td><td valign="top">725 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">3.89328 s</td><td valign="top">2.84213 s</td><td valign="top">693 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>3.93 s</b></td><td><b>2.85 s</b></td><td><b>757.33 МB</b></td></tr>
-<tr><td rowspan="4" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">8.85535 s</td><td valign="top">2.52537 s</td><td valign="top">1494 МB</td></tr>
+<tr><td rowspan="4" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">8.85535 s</td><td valign="top">2.52537 s</td><td valign="top">1494 МB</td></tr>
 <tr><td valign="top">2</td><td valign="top">9.02329 s</td><td valign="top">2.51772 s</td><td valign="top">1678 МB</td></tr>
 <tr><td valign="top">3</td><td valign="top">8.92508 s</td><td valign="top">2.53415 s</td><td valign="top">1316 МB</td></tr>
 <tr><td valign="top">Среднее</td><td><b>8.93 s</b></td><td><b>2.53 s</b></td><td><b>1496 МB</b></td></tr>
 </table>
+
 
 
 **Гистограмма:** 
@@ -291,16 +299,18 @@
 <tr><td rowspan="3" valign="top"><p></p><p><b>nlohmann/jon</b></p></td><td valign="top">1</td><td valign="top">12.559 s</td><td valign="top">160.381 s</td></tr>
 <tr><td valign="top">2</td><td valign="top">11.0462 s</td><td valign="top">161.02 s</td></tr>
 <tr><td valign="top">Среднее</td><td><b>11.8</b> s</td><td><b>160.7</b> s</td></tr>
-<tr><td rowspan="3" valign="top"><p></p><p><b>RapidJON</b></p></td><td valign="top">1</td><td valign="top">5.50354 s</td><td valign="top">53.1589 s</td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>RapidJSON</b></p></td><td valign="top">1</td><td valign="top">5.50354 s</td><td valign="top">53.1589 s</td></tr>
 <tr><td valign="top">2</td><td valign="top">4.2342 s</td><td valign="top">50.1703 s</td></tr>
 <tr><td valign="top">Среднее</td><td><b>4.87</b> s</td><td><b>51.66</b> s</td></tr>
 <tr><td rowspan="3" valign="top"><p></p><p><b>JonCpp</b></p></td><td valign="top">1</td><td valign="top">14.2557 s</td><td valign="top">29.7501 s</td></tr>
 <tr><td valign="top">2</td><td valign="top">12.3815 s</td><td valign="top">42.9883 s</td></tr>
 <tr><td valign="top">Среднее</td><td><b>13.32</b> s</td><td><b>36.37</b> s</td></tr>
-<tr><td rowspan="3" valign="top"><p></p><p><b>Boot.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">31.2017 s</td><td valign="top">72.2704 s</td></tr>
+<tr><td rowspan="3" valign="top"><p></p><p><b>Boost.PropertyTree</b></p></td><td valign="top">1</td><td valign="top">31.2017 s</td><td valign="top">72.2704 s</td></tr>
 <tr><td valign="top">2</td><td valign="top">30.0306 s</td><td valign="top">69.2141 s</td></tr>
 <tr><td valign="top">Среднее</td><td><b>30.62</b> s</td><td><b>70.74</b> s</td></tr>
 </table>
+
+
 
 
 **Гистограмма:**
